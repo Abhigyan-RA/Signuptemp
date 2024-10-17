@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { GoogleOAuthProvider } from '@react-oauth/google'; 
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
+import Dashboard from './pages/Dashboard';
+import OAuthCallback from './components/OAuthCallback';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GoogleOAuthProvider clientId="771462228760-cg8hgtffemf0l7rdgvp997vs1im4pr6v.apps.googleusercontent.com">
+    <Routes>
+      <Route path="/sign-in" element={<SignInPage />} />
+      <Route path="/sign-up" element={<SignUpPage />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/" element={<SignInPage />} />
+      <Route path="/sso-callback" element={<OAuthCallback />} />
+    </Routes>
+  </GoogleOAuthProvider>
   );
 }
 
