@@ -6,10 +6,12 @@ import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import Dashboard from './pages/Dashboard';
 import OAuthCallback from './components/OAuthCallback';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <GoogleOAuthProvider clientId="771462228760-cg8hgtffemf0l7rdgvp997vs1im4pr6v.apps.googleusercontent.com">
+      {/* <Navbar/> */}
     <Routes>
       <Route path="/sign-in" element={<SignInPage />} />
       <Route path="/sign-up" element={<SignUpPage />} />
