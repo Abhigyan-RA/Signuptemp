@@ -11,7 +11,7 @@ function OAuthCallback() {
     async function processOAuthCallback() {
       try {
         await handleRedirectCallback();
-        // Wait for user data to load
+        
         if (isLoaded) {
           if (isSignedIn) {
             console.log("User signed in:", user);
